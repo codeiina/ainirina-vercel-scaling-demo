@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello Vercel</title>
+</head>
+<body>
+  <h1 id="msg">Loading...</h1>
+  <pre id="output"></pre>
+
+  <script>
+    async function loadData() {
+      const res = await fetch('/api/hello');
+      const data = await res.json();
+      document.getElementById("msg").textContent = data.message;
+      document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+    }
+    loadData();
+  </script>
+</body>
+</html>
